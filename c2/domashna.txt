@@ -1,0 +1,10 @@
+broj na rechenici?
+broj na zborovi?
+broj na karakteri?
+
+kolku zborovi imat > 7 karakteri?
+kolku zborovi imat < 7 karakteri?
+kolku zborovi imat ==7 karakteri?
+
+koj zbor se povetoruva najmnogu?
+

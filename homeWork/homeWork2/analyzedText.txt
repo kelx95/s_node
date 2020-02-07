@@ -1,0 +1,7 @@
+Number of sentences: 65 
+Number of words: 513
+Number of characters: 2880
+Greater than 7: 112 
+Less than 7: 342 
+Equal to 7: 0
+The most frequent word is "sed" : 14 

@@ -31,7 +31,7 @@ const iminja = (req, res) => {
     });   
 };
 const iminjaPost = (req, res) => {
-    let newName = String(req.body.name) +"\n";
+    let newName = req.body.name +"\n";
     append('./iminja.txt', newName)
     .then(()=>{
         return read('./iminja.txt')  

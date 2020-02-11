@@ -46,26 +46,26 @@ const Produkt = require('./models/produkt');
 db.initDB();
 
 produkt.createNew({
-        "ime" : "Milka so jagodi",
-        "proizvoditel" : "Mondelez",
-        "cena" : 30,
-        "tezina" : 300,
-        "parcinja" : 1,
-        "__v" : 0   
+    "ime": "Milka so jagodi",
+    "proizvoditel": "Mondelez",
+    "cena": 30,
+    "tezina": 300,
+    "parcinja": 1,
+    "__v": 0
 })
-    .then(()=>{
-        return produkt.update("", {ime: "Milka so Leshnici"});
+    .then(() => {
+        return produkt.update("5e42c4ab70c8043510462ba7", { ime: "Milka so Oreo" });
 
     })
-    .then(()=>{
-        return produkt.remove("");
+    .then(() => {
+        return produkt.remove("5e42c10c7e8342249cf5e073");
     })
     .then(data => {
         return produkt.readAll();
     })
-    .then(()=>{
+    .then(() => {
         console.log(data);
     })
-    .then((err)=>{
+    .catch((err) => {
         console.log(err);
     })

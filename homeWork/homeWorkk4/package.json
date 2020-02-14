@@ -1,5 +1,5 @@
 {
-  "name": "HomeWork4",
+  "name": "homeworkk4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,13 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Kelment Xhelili",
   "license": "ISC",
   "dependencies": {
+    "hbs": "^4.1.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "hbs": "^4.1.0",
     "nodemon": "^2.0.2"
   }
 }

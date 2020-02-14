@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/add" method="post">
+        <input type="text" name="first_name" placeholder="first name" required="required" < />
+        <input type="text" name="last_name" placeholder="last name" required="required" < />
+        <input type="text" name="address" placeholder="address" required="required" < />
+        <input type="number" name="avg_grade" placeholder="avg name" required="required" < />
+        <button type="submit">Add</button>
+    </form>
+    <br />
+    <hr /><br />
+
+    <form action="/edit" method="post">
+        <select name="id">
+            {{#each students}}
+            <option name="id">{{this.id}}</option>
+            {{/each}}
+        </select>
+        <input type="text" name="first_name" placeholder="first name" required="required" < />
+        <input type="text" name="last_name" placeholder="last name" required="required" < />
+        <input type="text" name="address" placeholder="address" required="required" < />
+        <input type="number" name="avg_grade" placeholder="avg name" required="required" < />
+        <button type="submit">Edit</button>
+    </form>
+    <br />
+    <hr /><br />
+
+        <form action="/delete" method="post">
+        <input type="number" name="id" placeholder="Enter id to delete user" < />
+        <button type="submit">Delete</button>
+    </form>
+    <br />
+    <hr /><br />
+
+    <table border="1" width="80%">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Avg. Grade</th>
+            <th>Delete</th>
+        </tr>
+        {{#each students}}
+        <tr id="id_{{this.id}}">
+            <td>{{this.id}}</td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.address}}</td>
+            <td>{{this.avg_grade}}</td>
+            <td>
+                <form action="" method="post">
+                    <button type="submit" name="id" value={{this.id}}>Delete</button>
+                </form>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+
+</html>

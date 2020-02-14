@@ -1,5 +1,3 @@
-const mongoose = require('mongoose');
-
 const Produkt = mongoose.model(
     'produkti',
     {
@@ -15,7 +13,7 @@ const Produkt = mongoose.model(
 const readAll = () => {
     return new Promise((success, fail) => {
         Produkt.find({}, (err, data) => {
-            if(err){
+            if (err) {
                 return fail(err);
             }
             return success(data);
@@ -23,10 +21,21 @@ const readAll = () => {
     });
 };
 
-const createNew = (data) => {
-    return new Promise((success, fail) => {
+const createNew = (data)=>{
+    return new Promise((success, fail)=>{
         let p = new Produkt(data);
-        p.save((err) => {
+        p.save((err)=>{
+            if(err){
+                return  fail(err);
+            }
+            return success();
+        });
+    });
+};
+
+const remove = (id)=> {
+    return new Promise((success, fail)=>{
+        Produkt.deleteOne({_id: id}, (err)=>{
             if(err){
                 return fail(err);
             }
@@ -35,31 +44,20 @@ const createNew = (data) => {
     });
 };
 
-const remove = (id) => {
-    return new Promise((success, fail) => {
-        Produkt.deleteOne({_id: id}, (err) => {
+const update = (id, data)=>{
+    return new Promise((success, fail)=>{
+        Produkt.update({_id: id}, (err)=>{
             if(err){
                 return fail(err);
             }
-            return success();
-        });
-    });
-};
-
-const update = (id, data) => {
-    return new Promise((success, fail) => {
-        Produkt.updateOne({_id: id}, data, (err) => {
-            if(err){
-                return fail(err);
-            }
-            return success();
-        });
-    });
-};
+            return success(); 
+        })
+    })
+}
 
 module.exports = {
     readAll,
     createNew,
     remove,
     update
-};
+}

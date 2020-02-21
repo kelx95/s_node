@@ -68,6 +68,7 @@ const getByEmail = (email) => {
 };
 
 module.exports = {
+    User,
     readAll,
     createNew,
     remove,

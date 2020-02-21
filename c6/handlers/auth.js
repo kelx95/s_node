@@ -15,8 +15,10 @@ const apiLogin = (req, res) => {
         user.getByEmail(req.body.email)
             .then(data => {
                 if(bcrypt.compareSync(req.body.password, data.password)) {
+                    
                     let token = jwt.sign({ email: data.email }, tokenKey);
                     res.cookie('jwt', token);
+
                     res.redirect('/dashboard');
                 } else {
                     res.redirect('/?err=1')
@@ -69,5 +71,6 @@ module.exports = {
     viewLogin,
     apiLogin,
     viewRegister,
-    apiRegister
+    apiRegister,
+    tokenKey
 };

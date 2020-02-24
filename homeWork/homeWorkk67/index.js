@@ -15,6 +15,7 @@ let app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static('public'));
+hbs.registerPartials(__dirname + '/views/partials');
 
 app.use((req, res, next) => {
     let whitelist = [

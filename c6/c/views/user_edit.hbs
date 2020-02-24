@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/new_edit.css" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <h2>Edit User</h2>
+            <a href="/dashboard">Back</a>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="form">
+            <form method="post">
+                <input type="hidden" name="id" value="{{user._id}}" />
+                <label>
+                    <span>First Name</span>
+                    <input type="text" name="first_name" value="{{user.first_name}}" placeholder="first name"
+                        required="required" < />
+                </label>
+                <label>
+                    <span>Last Name</span>
+                    <input type="text" name="last_name" value="{{user.last_name}}" placeholder="last name"
+                        required="required" < />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="text" name="email" value="{{user.email}}" placeholder="email" required="required" < />
+                </label>
+                <button type="submit">Edit</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
